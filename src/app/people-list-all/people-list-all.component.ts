@@ -9,6 +9,7 @@ import { PeopleService } from '../people.service';
 export class PeopleListAllComponent implements OnInit {
 
   people: Array<any> = [];
+  pageTitle: string = "Lista de Pessoas";
 
   constructor(private peopleService: PeopleService) { }
 
