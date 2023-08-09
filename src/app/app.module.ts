@@ -4,8 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PeopleListAllComponent } from './people-list-all/people-list-all.component';
-import { PeopleService } from "./people.service";
+import { PeopleListAllComponent } from './components/people/people-list-all/people-list-all.component';
+import { PeopleService } from "./components/people/people.service";
 
 @NgModule({
   declarations: [
