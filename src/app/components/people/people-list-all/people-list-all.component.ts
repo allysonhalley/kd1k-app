@@ -36,10 +36,17 @@ export class PeopleListAllComponent implements OnInit{
   }
   
   listar(){
+    //this.people = this.peopleService.listJSON();
     this.peopleService.listar().subscribe(dados => this.people = dados);
   }
   
+
+  listarJSON(){
+    this.filteredPeople = this.peopleService.listJSON();
+  }
+  
   ngOnInit() {
+    //this.listarJSON();
     this.listar();
   }
 }

@@ -1,0 +1,112 @@
+[
+    {   
+        "id": "64ca7df902a3027769c75641",
+        "name": "Miss Demarcus Reinger",
+        "cpf": "42634761239",
+        "rg": "98548659898905",
+        "email": "ali@friesen.example",
+        "birthday": "1922-06-26",
+        "gender": "f",
+        "nationality": "Republic of Korea",
+        "place_birth": "Wisokybury"
+    },
+    {
+        "id": "64ca7df902a3027769c75642",
+        "name": "Richie Mitchell",
+        "cpf": "33639224795",
+        "rg": "24858876161941",
+        "email": "jeanne@gleason.example",
+        "birthday": "1977-10-13",
+        "gender": "m",
+        "nationality": "Cote d'Ivoire",
+        "place_birth": "Jakubowskiburgh"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75643",
+        "name": "Martin Schroeder",
+        "cpf": "33396197255",
+        "rg": "93255642509668",
+        "email": "lewis@hilll.example",
+        "birthday": "1978-01-19",
+        "gender": "m",
+        "nationality": "Ukraine",
+        "place_birth": "East Marlinbury"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75644",
+        "name": "Van Daugherty",
+        "cpf": "65019404255",
+        "rg": "36679492239049",
+        "email": "harriett@crona.example",
+        "birthday": "1981-08-02",
+        "gender": "f",
+        "nationality": "Argentina",
+        "place_birth": "Kathietown"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75645",
+        "name": "Elvie Parker",
+        "cpf": "75233249024",
+        "rg": "49304464947632",
+        "email": "chieko@armstrong.test",
+        "birthday": "1916-06-30",
+        "gender": "f",
+        "nationality": "Tonga",
+        "place_birth": "Kristopherberg"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75646",
+        "cpf": "72520316571",
+        "rg": "47275062560314",
+        "email": "shaunta_kris@wisoky-cruickshank.example",
+        "birthday": "1927-07-15",
+        "gender": "m",
+        "name": "Cole Grimes",
+        "nationality": "United States of America",
+        "place_birth": "Heaneybury"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75647",
+        "name": "Sen. Lisabeth Berge",
+        "cpf": "64827858145",
+        "rg": "87515954933715",
+        "email": "katina@cormier-vandervort.example",
+        "birthday": "1982-02-08",
+        "gender": "f",
+        "nationality": "Spain",
+        "place_birth": "Eduardotown"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75648",
+        "name": "Sima Grant Sr.",
+        "cpf": "75591549359",
+        "rg": "17636913553979",
+        "email": "rachelle.kunde@walker-king.example",
+        "birthday": "1940-05-20",
+        "gender": "m",
+        "nationality": "Sudan",
+        "place_birth": "North Clairport"
+    },
+    {
+        "id": "64ca7dfa02a3027769c75649",
+        "name": "Adriane Luettgen LLD",
+        "cpf": "85849170517",
+        "rg": "41541202606655",
+        "email": "giuseppe@schmeler.test",
+        "birthday": "1910-10-27",
+        "gender": "m",
+        "nationality": "Andorra",
+        "place_birth": "North Tennie"
+    },
+    {
+        "id": "64ca7dfa02a3027769c7564a",
+        "name": "Ty Prosacco",
+        "cpf": "31476405347",
+        "rg": "68450809124449",
+        "email": "johnnie.ritchie@barton-monahan.example",
+        "birthday": "1928-06-07",
+        "gender": "f",
+        "nationality": "Bhutan",
+        "place_birth": "Kemmerport"
+    }
+]

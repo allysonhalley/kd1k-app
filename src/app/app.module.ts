@@ -11,7 +11,7 @@ import { PeopleService } from "./components/people/people.service";
 @NgModule({
   declarations: [
     AppComponent,
-    PeopleListAllComponent
+    PeopleListAllComponent    
   ],
   imports: [
     BrowserModule,
