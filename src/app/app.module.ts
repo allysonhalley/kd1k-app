@@ -5,13 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PeopleListAllComponent } from './components/people/people-list-all/people-list-all.component';
-import { PeopleService } from "./components/people/people.service";
+import { PersonService } from "./components/person/person.service";
+import { PersonComponent } from "./components/person/person.component";
+import { PersonCardComponent } from "./components/person/person-card/person-card.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PeopleListAllComponent    
+    PersonComponent,
+    PersonCardComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { PeopleService } from "./components/people/people.service";
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ PeopleService ],
+  providers: [ PersonService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
