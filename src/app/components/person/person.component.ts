@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonService } from './person.service';
+import { PersonService } from '../../services/person.service';
 import { IPerson } from './person';
 import { NgForm } from '@angular/forms';
 
@@ -37,11 +37,10 @@ export class PersonComponent implements OnInit{
     this.personService.getPeople().subscribe(dados => this.people = dados);
   }
 
-  getPerson(id: string){
-    console.log(id);
-    this.personService.getPersonById(id).subscribe(() => {
-
-    })
+  getPerson(person : IPerson){
+    console.log(
+      this.personService.getPersonById(person.id)
+    )
   }
 
   savePerson(form: NgForm){

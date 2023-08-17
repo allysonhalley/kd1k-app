@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonService } from "../person.service";
+import { PersonService } from "../../../services/person.service";
 import { IPerson } from '../person';
 import { NgForm } from '@angular/forms';
 

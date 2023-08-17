@@ -1,67 +1,62 @@
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">
-            {{ pageTitle }}
-        </li>
-    </ol>
-</nav>
-<div class="card list-person">
-    <div class='card-header'>
-        {{ pageTitle | uppercase }}
-    </div>   
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-1">Filter by:</div>
-            <div class="col-md-2">
-                <input type="text" [(ngModel)]='listFilter'/>
+<div class="container">
+    <div class="card list-person">
+        <div class='card-header'>
+            {{ pageTitle | uppercase }}
+        </div>   
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-1">Filter by:</div>
+                <div class="col-md-2">
+                    <input type="text" [(ngModel)]='listFilter'/>
+                </div>
+                <div class="col-md-7">
+                    <h4 >Filtered by: {{ listFilter }}</h4>
+                </div>
             </div>
-            <div class="col-md-7">
-                <h4 >Filtered by: {{ listFilter }}</h4>
+            <div class="table-responsive">
+                <table class="table" >
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="fa fa-photo"></i>  
+                                </button>
+                            </th>
+                            <th>Name</th>
+                            <th>CPF</th>
+                            <th>Nationality</th>
+                            <th>Action</th>
+                        </tr>                    
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of filteredPeople">
+                            <td>
+                            </td>
+                            <td>
+                                {{ p.name }}
+                            </td>
+                            <td>
+                                {{ p.cpf }}
+                            </td>
+                            <td>
+                                {{ p.nationality }}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-info" (click)="getPerson(p)">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            <button type="button" class="btn btn-sm btn-warning" (click)="editPerson(p)">
+                                <i class="fa fa-pencil"></i>                                
+                            </button>
+                            <button class="btn btn-sm btn-danger" (click)="deletePerson(p)">
+                                <i class="fa fa-trash"></i>                                
+                            </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="table-responsive">
-            <table class="table" >
-                <thead>
-                    <tr>
-                        <th>
-                            <button class="btn btn-primary">
-                                Show Image
-                            </button>
-                        </th>
-                        <th>Name</th>
-                        <th>CPF</th>
-                        <th>Nationality</th>
-                        <th>Action</th>
-                    </tr>                    
-                </thead>
-                <tbody>
-                    <tr *ngFor="let p of filteredPeople">
-                        <td>
-                        </td>
-                        <td>
-                            {{ p.name }}
-                        </td>
-                        <td>
-                            {{ p.cpf }}
-                        </td>
-                        <td>
-                            {{ p.nationality }}
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-sm btn-info" (click)="getPerson(p.id)">
-                                <i class="fa fa-eye"></i>
-                            </button>
-                        <button type="button" class="btn btn-sm btn-warning" (click)="editPerson(p)">
-                            <i class="fa fa-pencil"></i>                                
-                        </button>
-                        <button class="btn btn-sm btn-danger" (click)="deletePerson(p)">
-                            <i class="fa fa-trash"></i>                                
-                        </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <app-person-card></app-person-card>
     </div>
-    <app-person-card></app-person-card>
 </div>

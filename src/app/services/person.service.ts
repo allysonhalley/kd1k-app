@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from "rxjs/operators";
-import { IPerson } from './person';
-import * as peopleList from './people.json';
+import { IPerson } from '../components/person/person';
+import * as peopleList from '../components/person/people.json';
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
   peopleUrl = 'https://web-production-9e97.up.railway.app/people';
+  //peopleUrl = 'http://localhost:3000/people';
   //people: IPerson[] = peopleList;
 
   constructor(private httpClient: HttpClient) { }
@@ -26,6 +27,7 @@ export class PersonService {
   }
 
   getPersonById(id: string): Observable<IPerson>{
+    console.log(id);
     return this.httpClient.get<IPerson>(this.peopleUrl + '/' + id)
     .pipe(
       retry(2),
