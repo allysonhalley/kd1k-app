@@ -11,6 +11,7 @@ import { PersonCardComponent } from "./components/person/person-card/person-card
 import { RouterModule } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { PersonCardGuard } from './components/person/person-card/person-card.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,11 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'people', component: PersonComponent },
       //{ path: 'people/:id', component: PersonComponent },
-      { path: 'people/:id', component: PersonCardComponent }
+      { 
+       path: 'people/:id',
+       canActivate: [PersonCardGuard],
+       component: PersonCardComponent
+       }
     ])
   ],
   providers: [ PersonService ],
