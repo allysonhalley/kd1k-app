@@ -13,6 +13,7 @@ export class PersonComponent implements OnInit{
   pageTitle: string = 'Lista de Militares';
   people: IPerson[] = [];
   person = {} as IPerson;
+  filteredPeople: IPerson[] = this.people;
   
   private _filter: string = "";
   
@@ -24,7 +25,6 @@ export class PersonComponent implements OnInit{
     this.filteredPeople = this.performFilter(v)
   }
   
-  filteredPeople: IPerson[] = this.people;
 
   constructor(private personService: PersonService) { }
   
@@ -34,7 +34,7 @@ export class PersonComponent implements OnInit{
 
   getPeople(){
     //this.people = this.peopleService.listJSON();
-    this.personService.getPeople().subscribe(dados => this.people = dados);
+    this.personService.getPeople().subscribe(data => this.people = data);
   }
 
   getPerson(id: string){
@@ -71,9 +71,9 @@ export class PersonComponent implements OnInit{
   }
   
   cleanForm(form: NgForm) {
-    this.getPeople();
+    //this.getPeople();
     form.resetForm();
-    this.person = {} as IPerson;
+    //this.person = {} as IPerson;
   }
   
   /*
