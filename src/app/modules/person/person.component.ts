@@ -14,13 +14,13 @@ export class PersonComponent implements OnInit{
   people: IPerson[] = [];
   person = {} as IPerson;
   
-  private _listFilter: string = "";
+  private _filter: string = "";
   
-  public get listFilter() : string {
-    return  this._listFilter;
+  public get filter() : string {
+    return  this._filter;
   }  
-  public set listFilter(v : string) {
-    this._listFilter = v;
+  public set filter(v : string) {
+    this._filter = v;
     this.filteredPeople = this.performFilter(v)
   }
   
