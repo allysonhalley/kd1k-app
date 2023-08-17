@@ -1,45 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonService } from "./services/person.service";
-import { PersonComponent } from "./components/person/person.component";
-import { PersonCardComponent } from "./components/person/person-card/person-card.component";
 import { RouterModule } from '@angular/router';
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { PersonCardGuard } from './components/person/person-card/person-card.guard';
+import { WelcomeComponent } from './modules/welcome/welcome.component';
+import { NavbarComponent } from './modules/shared/navbar/navbar.component';
+import { PersonModule } from './modules/person/person.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonComponent,
-    PersonCardComponent,
     WelcomeComponent,
     NavbarComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    BrowserModule,    
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: 'people', component: PersonComponent },
-      //{ path: 'people/:id', component: PersonComponent },
-      { 
-       path: 'people/:id',
-       canActivate: [PersonCardGuard],
-       component: PersonCardComponent
-       }
-    ])
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' }      
+    ]),
+    PersonModule
   ],
-  providers: [ PersonService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

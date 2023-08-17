@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from "rxjs/operators";
-import { IPerson } from '../components/person/person';
-import * as peopleList from '../components/person/people.json';
+import { IPerson } from '../modules/person/person';
+//import * as peopleList from './people.json';
 @Injectable({
   providedIn: 'root'
 })
