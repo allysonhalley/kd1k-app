@@ -37,10 +37,8 @@ export class PersonComponent implements OnInit{
     this.personService.getPeople().subscribe(dados => this.people = dados);
   }
 
-  getPerson(person : IPerson){
-    console.log(
-      this.personService.getPersonById(person.id)
-    )
+  getPerson(id: string){
+    this.personService.getPersonById(id);
   }
 
   savePerson(form: NgForm){

@@ -27,11 +27,11 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'people', component: PersonComponent },
-      { path: 'people/:id', component: PersonCardComponent },
-      { path: 'people/:id', component: PersonComponent }
+      //{ path: 'people/:id', component: PersonComponent },
+      { path: 'people/:id', component: PersonCardComponent }
     ])
   ],
   providers: [ PersonService ],

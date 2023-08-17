@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonService } from "../../../services/person.service";
 import { IPerson } from '../person';
-import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PersonService } from "../../../services/person.service";
 
 @Component({
   selector: 'app-person-card',
@@ -10,20 +10,27 @@ import { NgForm } from '@angular/forms';
 })
 export class PersonCardComponent implements OnInit {
 
-  pageTitle = "Militar"
+  pageTitle = "Military Detail"
   person = {} as IPerson;
-
-  constructor(private personService: PersonService) { }
-
+  
+  constructor(private route: ActivatedRoute, private router: Router, private personService: PersonService) { }
+  
   ngOnInit() {
-    this.getPerson   
+    const id = String(this.route.snapshot.paramMap.get('id'));    
+    this.getPerson(id);
+    console.log(this.person.id);
+    
   }
 
-  getPerson(person: IPerson){
-    this.personService.getPersonById(this.person.id).subscribe(() => {
-
-    })
+  onBack(): void {
+    this.router.navigate(['/people']);
   }
+
+  getPerson(id: string){
+    this.personService.getPersonById(id).subscribe(dados => this.person = dados);
+  }
+
+  /*
 
   savePerson(form: NgForm){
     if (this.person.id !== undefined) {
@@ -45,5 +52,6 @@ export class PersonCardComponent implements OnInit {
     form.resetForm();
     this.person = {} as IPerson;
   }
+  */
 
 }
