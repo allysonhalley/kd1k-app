@@ -51,8 +51,9 @@ export class PersonService {
     )
   }
 
-  deletePerson(person: IPerson) {
-    return this.httpClient.delete<IPerson>(this.peopleUrl + '/' + person.id, this.httpOptions)
+  deletePerson(id: string) {    
+    console.log("service: "+id);
+    return this.httpClient.delete<IPerson>(this.peopleUrl + '/' + id, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

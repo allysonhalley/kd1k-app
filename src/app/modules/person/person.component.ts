@@ -30,37 +30,19 @@ export class PersonComponent implements OnInit{
   
   ngOnInit() {
     this.getPeople();
+    this.people = this.performFilter(" ");
   }
 
   getPeople(){
     //this.people = this.peopleService.listJSON();
     this.personService.getPeople().subscribe(data => this.people = data);
   }
-
-  getPerson(id: string){
-    this.personService.getPersonById(id);
-  }
-
-  savePerson(form: NgForm){
-    if (this.person.id !== undefined) {
-      this.personService.updatePerson(this.person).subscribe(() => {
-        this.cleanForm(form);
-      });
-    } else {
-      this.personService.savePerson(this.person).subscribe(() => {
-        this.cleanForm(form);
-      })
-    }
-  }
-
-  editPerson(person: IPerson) {
-    this.person = {...person};
-  }
-
-  deletePerson(person: IPerson) {
-    this.personService.deletePerson(person).subscribe(() => {
+  
+  deletePerson(id: string) {    
+    this.personService.deletePerson(id).subscribe(() => {
       this.getPeople();
     })
+
   }
 
   // Dynamic filter
@@ -69,17 +51,5 @@ export class PersonComponent implements OnInit{
     return this.people.filter((person: IPerson) =>
       person.name.toLocaleLowerCase().includes(filterBy));
   }
-  
-  cleanForm(form: NgForm) {
-    //this.getPeople();
-    form.resetForm();
-    //this.person = {} as IPerson;
-  }
-  
-  /*
-  listarJSON(){
-    this.filteredPeople = this.peopleService.getPeople();
-  }
-  */
   
 }

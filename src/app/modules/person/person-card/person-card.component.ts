@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IPerson } from '../person';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersonService } from "../../../services/person.service";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-person-card',
@@ -17,9 +18,7 @@ export class PersonCardComponent implements OnInit {
   
   ngOnInit() {
     const id = String(this.route.snapshot.paramMap.get('id'));    
-    this.getPerson(id);
-    console.log(this.person.id);
-    
+    this.getPerson(id);    
   }
 
   onBack(): void {
@@ -29,9 +28,7 @@ export class PersonCardComponent implements OnInit {
   getPerson(id: string){
     this.personService.getPersonById(id).subscribe(dados => this.person = dados);
   }
-
-  /*
-
+  
   savePerson(form: NgForm){
     if (this.person.id !== undefined) {
       this.personService.updatePerson(this.person).subscribe(() => {
@@ -44,14 +41,9 @@ export class PersonCardComponent implements OnInit {
     }
   }
 
-  editPerson(person: IPerson) {
-    this.person = {...person};
-  }
-
   cleanForm(form: NgForm) {
     form.resetForm();
     this.person = {} as IPerson;
   }
-  */
-
+  
 }
